@@ -2,6 +2,7 @@ GettingAndCleaningDataProject
 =============================
 
 Course Project for Getting and Cleaning Data
+
 Source:  Coursera Project Assignment
 
 This R script assumes you have downloaded the Human Activity Recognition (HAR) Using Smartphones data set.
@@ -21,7 +22,7 @@ Data is subsetted to only keep the mean (Mean) and standard deviation (Stdev) fo
 ### 3. Use descriptive activity names to name the activities in the data set
 Dplyr package is loaded (installed if necessary)
 Left_join is used to bring in activityType to add desciptive activity names.
-Using select, data is reorganized to improve readibilit, bring subjectID, activityID, and activityType to the beginning of the new set, subsetFinalData.
+Using select, data is reorganized to improve readibility, bringing subjectID, activityID, and activityType to the beginning of the new set: subsetFinalData.
 
 
 ### 4. Appropriately label the data set with descriptive activity names. 
