@@ -15,36 +15,36 @@
 setwd("./data/UCI HAR Dataset/")
 
 #read the features and activityType data
-features	  	<- read.table("./features.txt", header=F)
+features	<- read.table("./features.txt", header=F)
 activityType  	<- read.table("./activity_labels.txt",header=F)
 
 #read the training data
 subjectTrain	<-  read.table("./train/subject_train.txt", header=F)
-xTrain			<-  read.table("./train/X_train.txt", header=F)
-yTrain			<-  read.table("./train/Y_train.txt", header=F)
+xTrain	<-  read.table("./train/X_train.txt", header=F)
+yTrain	<-  read.table("./train/Y_train.txt", header=F)
 
 #read the test data
 subjectTest	<-  read.table("./test/subject_test.txt", header=F)
-xTest		<-  read.table("./test/X_test.txt", header=F)
-yTest		<-  read.table("./test/Y_test.txt", header=F)
+xTest	<-  read.table("./test/X_test.txt", header=F)
+yTest	<-  read.table("./test/Y_test.txt", header=F)
 
 #assign column names
-colnames(activityType)	<- c("activityId","activityType")
+colnames(activityType)                  <- c("activityId","activityType")
 colnames(subjectTrain) 	<- "subjectId"
-colnames(xTrain)		<-	features[,2]
-colnames(yTrain)		<-	"activityId"
-colnames(subjectTest) 	<- 	"subjectId"
-colnames(xTest)			<-	features[,2]
-colnames(yTest)			<-	"activityId"
+colnames(xTrain)		<- features[,2]
+colnames(yTrain)		<-"activityId"
+colnames(subjectTest) 	<- "subjectId"
+colnames(xTest)		<- features[,2]
+colnames(yTest)		<-"activityId"
 
 #merge training datasets
-trainData 	<-	cbind(yTrain, subjectTrain, xTrain)
+trainData 	<- cbind(yTrain, subjectTrain, xTrain)
 
 #merge test datasets
-testData 	<-	cbind(yTest, subjectTest, xTest)
+testData 	<- cbind(yTest, subjectTest, xTest)
 
 #combine the merged training and test datasets
-finalData	<-  rbind(trainData, testData)
+finalData	<- rbind(trainData, testData)
 
 #extracting only data elements for mean and standard deviation
 activities      <-  colnames(finalData)
