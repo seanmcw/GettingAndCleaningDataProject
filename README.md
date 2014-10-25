@@ -9,7 +9,7 @@ The dataset can be obtained at the following  url:  https://d396qusza40orc.cloud
 
 This R script will perform the following steps:
 
-###Note:  set working directory to above dataset location
+###Note:  set working directory to location of above downloaded dataset
 Line 15 in script should be edited if needed.
 
 ### 1. Merge the training and the test sets to create one data set.
